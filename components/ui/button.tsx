@@ -42,7 +42,12 @@ function Button({ className, variant, size, children, ...props }: ButtonProps) {
 
   const muiSize = size === "sm" ? "small" : size === "lg" ? "large" : "medium"
 
-  const muiColor = variant === "destructive" ? "error" : variant === "secondary" ? "secondary" : "primary"
+  const muiColor =
+    variant === "destructive"
+      ? "error"
+      : variant === "secondary"
+        ? "secondary"
+        : "primary"
 
   return (
     <MuiButton

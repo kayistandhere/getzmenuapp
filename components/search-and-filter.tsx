@@ -46,18 +46,20 @@ export function SearchAndFilter({
           <Label htmlFor="category-select" className="text-sm font-medium mb-2 block">
             Filter by Category
           </Label>
-          <Select value={selectedCategory} onValueChange={onCategoryChange}>
-            <SelectTrigger id="category-select" aria-label="Select category filter">
-              <SelectValue placeholder="Select category" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="All">All Categories</SelectItem>
-              <SelectItem value="Main">Main Dishes</SelectItem>
-              <SelectItem value="Side">Side Dishes</SelectItem>
-              <SelectItem value="Beverage">Beverages</SelectItem>
-              <SelectItem value="Dessert">Desserts</SelectItem>
-            </SelectContent>
-          </Select>
+          <div id="category-filter" aria-label="Select category filter">
+            <Select >
+              <SelectTrigger className="w-full">
+                <SelectValue placeholder="Select category" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="All">All Categories</SelectItem>
+                <SelectItem value="Main">Main Dishes</SelectItem>
+                <SelectItem value="Side">Side Dishes</SelectItem>
+                <SelectItem value="Beverage">Beverages</SelectItem>
+                <SelectItem value="Dessert">Desserts</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
         </div>
 
         <div className="flex items-center space-x-3 sm:pb-2">

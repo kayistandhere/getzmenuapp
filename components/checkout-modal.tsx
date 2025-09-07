@@ -64,7 +64,7 @@ export function CheckoutModal({ isOpen, onClose, cartItems, subtotal, tax, grand
   if (orderComplete) {
     return (
       <Dialog open={isOpen} onOpenChange={onClose}>
-        <DialogContent className="sm:max-w-md" role="dialog" aria-labelledby="success-title">
+        <DialogContent className="sm:max-w-md"   aria-labelledby="success-title">
           <div className="text-center py-6">
             <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
               <CheckCircle className="h-8 w-8 text-primary" aria-hidden="true" />
@@ -85,11 +85,11 @@ export function CheckoutModal({ isOpen, onClose, cartItems, subtotal, tax, grand
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent
         className="sm:max-w-2xl max-h-[90vh] overflow-y-auto"
-        role="dialog"
+         
         aria-labelledby="checkout-title"
       >
         <DialogHeader>
-          <DialogTitle id="checkout-title" className="text-lg sm:text-xl font-semibold">
+          <DialogTitle    className="text-lg sm:text-xl font-semibold">
             Checkout Summary
           </DialogTitle>
         </DialogHeader>
