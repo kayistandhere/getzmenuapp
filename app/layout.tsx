@@ -4,45 +4,14 @@ import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
-import { ThemeProvider, createTheme } from "@mui/material/styles"
-import CssBaseline from "@mui/material/CssBaseline"
 import { Suspense } from "react"
+import { ThemeRegistry } from "@/components/ThemeRegistry" // Adjust path accordingly
 
 export const metadata: Metadata = {
   title: "F&B Menu & Cart App",
   description: "Modern food ordering application with cart functionality",
   generator: "v0.app",
 }
-
-const muiTheme = createTheme({
-  palette: {
-    primary: {
-      main: "#10b981", // emerald-500
-      light: "#34d399", // emerald-400
-      dark: "#059669", // emerald-600
-    },
-    secondary: {
-      main: "#6b7280", // gray-500
-    },
-    background: {
-      default: "#ffffff",
-      paper: "#f9fafb",
-    },
-  },
-  typography: {
-    fontFamily: "var(--font-geist-sans)",
-  },
-  components: {
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          textTransform: "none",
-          borderRadius: "8px",
-        },
-      },
-    },
-  },
-})
 
 export default function RootLayout({
   children,
@@ -60,11 +29,10 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <ThemeProvider theme={muiTheme}>
-          <CssBaseline />
+        <ThemeRegistry>
           <Suspense fallback={null}>{children}</Suspense>
           <Analytics />
-        </ThemeProvider>
+        </ThemeRegistry>
       </body>
     </html>
   )
